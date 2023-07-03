@@ -155,12 +155,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="include\harpy_system\hash\MD5.cpp" />
-    <ClCompile Include="include\harpy_system\save_sys.cpp" />
+    <ClCompile Include="harpy_system\hash\MD5.cpp" />
+    <ClCompile Include="harpy_system\save_sys.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\harpy_system\hash\MD5.h" />
-    <ClInclude Include="include\harpy_system\save_sys.h" />
+    <ClInclude Include="harpy_system\hash\MD5.h" />
+    <ClInclude Include="harpy_system\save_sys.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
