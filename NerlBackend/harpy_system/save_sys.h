@@ -22,11 +22,11 @@ typedef std::vector<wchar_t> blob;
 namespace harpy::system
 {
 
-    bool NERLL_API is_blob(std::string str);
+    bool NERLL_API is_blob(std::wstring str);
 
     class NERLL_API save_sys
     {
-        static std::string common_filepath{};
+        static std::wstring common_filepath{};
 
         //First in pair is hasher, second shows is it free for thread
         std::vector<std::pair<MD5, bool>> hashiers;
@@ -47,12 +47,11 @@ namespace harpy::system
         */
 
         void save(std::string file, blob data);
-        void save(std::string source, std::string destination);
-
+        
         blob load(std::string hash);
 
         static void choose_base_filepath();
-        static void choose_base_filepath(std::string);
+        static void choose_base_filepath(std::wstring);
         
 
         
