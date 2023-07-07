@@ -69,6 +69,7 @@ documentation and/or software.
 //      MD5(std::string).hexdigest()
 //
 // assumes that char is 8 bit and int is 32 bit
+//TODO: make MD5 lightning fast
 class NERLL_API MD5
 {
 public:
