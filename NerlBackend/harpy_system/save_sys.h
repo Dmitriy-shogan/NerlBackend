@@ -2,8 +2,6 @@
 #ifndef HARPY_FILESAVE_SYS
 #define HARPY_FILESAVE_SYS
 #include <string>
-#include <vector>
-#include <atomic>
 
 #include "hash/MD5.h"
 
@@ -22,7 +20,7 @@
 
 namespace harpy::system
 {
-    using blob = std::wstring;
+    using blob = std::string;
     
     bool NERLL_API is_blob(std::string str);
 
