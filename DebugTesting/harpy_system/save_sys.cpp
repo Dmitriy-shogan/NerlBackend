@@ -1,7 +1,9 @@
 ﻿#include "save_sys.h"
+
 #include <filesystem>
-#include <thread>
 #include <fstream>
+#include <string>
+
 namespace fs = std::filesystem;
 
 bool harpy::system::is_blob(std::string str)
@@ -10,6 +12,7 @@ bool harpy::system::is_blob(std::string str)
     return true;
     
 }
+
 
 harpy::system::save_sys::save_sys()
 {
@@ -33,25 +36,31 @@ void harpy::system::save_sys::save(std::string filename, blob file)
         + hash[3]};
     auto hash_filename {static_cast<char> (fs::path::preferred_separator) + hash.substr(4)+ ".HHF"}; //Harpy Hashed File
     
-    std::wofstream saver{
+    std::ofstream saver{
         directory + hash_filename, 
-        std::ios::binary & std::ios::out
+        std::ios::binary | std::ios::out
     };
-
+    
+    
     if (!saver.is_open())
     {
         fs::create_directories(directory);
-        std::wofstream(directory + hash_filename);
+        std::ofstream(directory + hash_filename);
         saver.open(directory + hash_filename);
     }
+
+    saver << file;
     
-    saver.write(file.data(), file.size());
+    if (!saver.good())
+    {
+        throw std::runtime_error("Something went wrong while writing into file");
+    }
     saver.close();
 }
 
 harpy::system::blob harpy::system::save_sys::load(std::string hash)
 {
-    std::wifstream getter{std::string(common_filepath.begin(), common_filepath.end())
+    std::ifstream getter{std::string(common_filepath.begin(), common_filepath.end())
          + static_cast<char>(fs::path::preferred_separator)
          + hash[0]
          + hash[1]
@@ -61,9 +70,9 @@ harpy::system::blob harpy::system::save_sys::load(std::string hash)
          + static_cast<char>(fs::path::preferred_separator)
          + hash.substr(4)
          + ".HHF", //HarpyFiLe
-         std::ios::binary & std::ios::in};
+         std::ios::binary | std::ios::in};
 
-    std::wostringstream sstr;
+    std::ostringstream sstr;
     sstr << getter.rdbuf();
     return sstr.str();
 }

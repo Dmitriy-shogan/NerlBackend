@@ -4,6 +4,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NerlBackend", "NerlBackend\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST", "TEST\TEST.vcxproj", "{E9885CB7-B4D5-4F8B-8A80-BD3A47EEAB0D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DebugTesting", "DebugTesting\DebugTesting.vcxproj", "{931E9315-5080-4E99-9607-E432F8831E95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -28,5 +30,13 @@ Global
 		{E9885CB7-B4D5-4F8B-8A80-BD3A47EEAB0D}.Release|Win32.Build.0 = Release|Win32
 		{E9885CB7-B4D5-4F8B-8A80-BD3A47EEAB0D}.Release|x64.ActiveCfg = Release|x64
 		{E9885CB7-B4D5-4F8B-8A80-BD3A47EEAB0D}.Release|x64.Build.0 = Release|x64
+		{931E9315-5080-4E99-9607-E432F8831E95}.Debug|Win32.ActiveCfg = Debug|Win32
+		{931E9315-5080-4E99-9607-E432F8831E95}.Debug|Win32.Build.0 = Debug|Win32
+		{931E9315-5080-4E99-9607-E432F8831E95}.Debug|x64.ActiveCfg = Debug|x64
+		{931E9315-5080-4E99-9607-E432F8831E95}.Debug|x64.Build.0 = Debug|x64
+		{931E9315-5080-4E99-9607-E432F8831E95}.Release|Win32.ActiveCfg = Release|Win32
+		{931E9315-5080-4E99-9607-E432F8831E95}.Release|Win32.Build.0 = Release|Win32
+		{931E9315-5080-4E99-9607-E432F8831E95}.Release|x64.ActiveCfg = Release|x64
+		{931E9315-5080-4E99-9607-E432F8831E95}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 EndGlobal
